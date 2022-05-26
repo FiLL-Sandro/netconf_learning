@@ -1,0 +1,29 @@
+{
+	"folders":
+	[
+		{
+			// "file_include_patterns": [ "*.c", "*.cpp" ],
+			// "file_exclude_patterns": [ "*.a", "*.so", "*.so.*", "*.o", "*.tar", "*.tar.*" ],
+			// "folder_include_patterns": [ "*/linux/*" ],
+			"folder_exclude_patterns": [ "OpenYuma-master" ],
+			// "index_include_patterns": ,
+			"index_exclude_patterns": [ "*" ],
+			"follow_symlinks": false,
+
+			// "name": "dir",
+			"path": "."
+		},
+		{
+			// "file_include_patterns": [ "*.c", "*.cpp" ],
+			// "file_exclude_patterns": [ "*.a", "*.so", "*.so.*", "*.o", "*.tar", "*.tar.*" ],
+			// "folder_include_patterns": [ "*/linux/*" ],
+			// "folder_exclude_patterns": [ "*/OpenYuma-master/*" ],
+			// "index_include_patterns": ,
+			"index_exclude_patterns": [ "*" ],
+			"follow_symlinks": false,
+
+			// "name": "dir",
+			"path": "./OpenYuma-master"
+		},
+	]
+}
