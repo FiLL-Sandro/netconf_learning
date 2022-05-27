@@ -11,3 +11,10 @@
 *.lai
 *.la
 *.a
+
+*.D
+**/dependencies
+libtecla/man
+libtecla/Makefile
+libtecla/config.log
+libtecla/config.status
