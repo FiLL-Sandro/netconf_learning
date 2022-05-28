@@ -16,7 +16,7 @@ clean:
 	$(MAKE) -C openssl-master $@
 
 openyuma: libxml2 openssl libssh2
-	DESTDIR=$$(pwd) PREFIX=/out $(MAKE) -C OpenYuma-master
+	$(MAKE) openyuma_quick
 
 openyuma_quick:
 	DESTDIR=$$(pwd) PREFIX=/out $(MAKE) -C OpenYuma-master
@@ -33,6 +33,11 @@ libssh2:
 	    --with-libssl-prefix=$$(pwd)/../out
 	$(MAKE) -C libssh2-master
 	$(MAKE) -C libssh2-master install
+
+libz:
+	cd zlib-master ; \
+	  prefix=${pwd}../out ./configure ; \
+	  $(MAKE) test ; $(MAKE) install
 
 openssl:
 	cd openssl-master ; ./Configure --prefix=$$(pwd)/../out
