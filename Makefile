@@ -4,7 +4,10 @@ OUTPUT_DIR := ${ROOT}/out
 all: outdir openyuma
 
 outdir:
-	if [ ! -d out ]; then mkdip -p out ; fi
+	if [ ! -d out ]; then mkdir -p out ; fi
+
+clean-%:
+	$(MAKE) -C $*-master clean
 
 clean:
 	PREFIX=$$(pwd)/out $(MAKE) -C OpenYuma-master $@
@@ -19,7 +22,7 @@ openyuma_quick:
 	DESTDIR=$$(pwd) PREFIX=/out $(MAKE) -C OpenYuma-master
 
 libxml2:
-	cd libxml2-master ; ./autogen.sh --prefix=$$(pwd)/../out
+	cd libxml2-master ; ./autogen.sh --prefix=$$(pwd)/../out --without-python
 	$(MAKE) -C libxml2-master
 	$(MAKE) -C libxml2-master install
 
