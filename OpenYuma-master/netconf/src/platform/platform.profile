@@ -205,7 +205,7 @@ endif
 
 #LFLAGS=-v --no-as-needed
 LFLAGS=-lm
-LPATH=-L$(LBASE) 
+LPATH=-L$(LBASE) -L/usr/lib/x86_64-linux-gnu
 
 CEES = $(wildcard *.c)
 

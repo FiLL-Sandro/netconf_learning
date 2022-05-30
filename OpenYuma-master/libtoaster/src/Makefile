@@ -165,7 +165,14 @@ LINTFLAGS= '-weak -macrovarprefix "m_"'
 LIBTOOL=$(CROSS_TARGET)ar
 #LFLAGS=-v --no-as-needed
 LFLAGS=-lm
-LPATH=-L$(LBASE)
+
+ifdef LPATH
+LPATH += -L$(LBASE)
+LPATH += -L/usr/lib/x86_64-linux-gnu -L/home/fill/work_space/netconf_learning/out/lib
+else
+LPATH = -L$(LBASE)
+LPATH += -L/usr/lib/x86_64-linux-gnu -L/home/fill/work_space/netconf_learning/out/lib
+endif
 
 CEES = $(wildcard *.c)
 
@@ -184,6 +191,7 @@ PLATFORM_CPP=
 COMPILE.c= $(CC) $(CFLAGS) $(CPPFLAGS) $(PLATFORM_CPP) \
            $(CINC) $(SUBDIR_CPP) $(TARGET_ARCH) -c
 
+CFLAGS += ${LPATH}
 
 $(TARGET)/%.o: %.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(PLATFORM_CPP) \
