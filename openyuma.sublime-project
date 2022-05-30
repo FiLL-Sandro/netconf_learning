@@ -6,7 +6,7 @@
 			// "file_exclude_patterns": [ "*.a", "*.so", "*.so.*", "*.o", "*.tar", "*.tar.*" ],
 			// "folder_include_patterns": [ "*/linux/*" ],
 			"folder_exclude_patterns": [ 
-				"OpenYuma-master", "libxml2-master", "libssh2-master", "openssl-master"
+				"OpenYuma-master", "libxml2-master", "libssh2-master", "openssl-master", "zlib-master"
 			],
 			// "index_include_patterns": ,
 			"index_exclude_patterns": [ "*" ],
@@ -62,6 +62,18 @@
 
 			// "name": "dir",
 			"path": "./openssl-master"
+		},
+		{
+			// "file_include_patterns": [ "*.c", "*.cpp" ],
+			// "file_exclude_patterns": [ "*.a", "*.so", "*.so.*", "*.o", "*.tar", "*.tar.*" ],
+			// "folder_include_patterns": [ "*/linux/*" ],
+			// "folder_exclude_patterns": [ "*/OpenYuma-master/*" ],
+			// "index_include_patterns": ,
+			"index_exclude_patterns": [ "*" ],
+			"follow_symlinks": false,
+
+			// "name": "dir",
+			"path": "./zlib-master"
 		},
 	]
 }
